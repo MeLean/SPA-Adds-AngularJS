@@ -57,7 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\images\noPicture.png" />
+    <Content Include="app\images\no-picture.png" />
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controlers\addsControler.js" />
     <Content Include="app\css\my-style.css" />

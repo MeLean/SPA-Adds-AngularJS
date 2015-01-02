@@ -1,3 +1,11 @@
 ﻿body {
     background: lightgreen;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+.img-circle {
+  width: 200px;
+  height: 150px;
+} 

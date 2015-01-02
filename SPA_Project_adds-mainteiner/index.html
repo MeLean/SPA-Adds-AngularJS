@@ -55,32 +55,43 @@
             </div>
         </div>
         <div class="container">
-            <div class="jumbotron">
+            <div ng-cloak class="jumbotron">
                 <div ng-repeat="add in Adds">
-                    <!-- TODO make better css -->
+                    <!-- TODO make better css 
+                        	"id": 362,
+            "title": "Muha",
+            "text": "Mnogo mufassaaa. Cena 5 kamili",
+            "date": "2015-01-02T20:03:24.2330000",
+            "imageDataUrl":"karakacil",
+	    "ownerName": "Muhaaaaaaaa",
+            "ownerEmail": "muha@gmail.com",
+            "ownerPhone": "7879878678",
+            "categoryId": 10,
+            "townId": 16-->
+                  
                     <div>
-                        {{add.title}}
+                        <strong>{{add.title}}</strong>
                         <br />
                     </div>
                     <div>
-                        {{add.date}}
+                        <strong>{{add.date | date:'dd.MMMM.yyyy'}}</strong>
                         <br />
                     </div>
-                    <img ng-src="{{add.picture}}" width="150" height="150" alt="no image" /><br />
+                    <img class="img-circle" ng-src="{{add.imageDataUrl || 'app/images/no-picture.png' }}" alt="no image" /><br />
                     <div>
                         {{add.text}}
                         <br />
                     </div>
                     <div>
-                        <strong>Name: </strong>{{add.name}}
+                        <strong>Name: </strong>{{add.ownerName}}
                         <br />
                     </div>
                     <div>
-                        <strong>Email: </strong>{{add.email}}
+                        <strong>Email: </strong>{{add.ownerEmail}}
                         <br />
                     </div>
                     <div>
-                        <strong>tel.: </strong>{{add.tel}}
+                        <strong>tel.: </strong>{{add.ownerPhone}}
                         <br />
                     </div>
                 </div>
