@@ -1,0 +1,7 @@
+1. Write html;
+2. Add boodstrap classes
+3. Reserch how work REST services, written by SoftUni Team.
+4. Write Angular directives;
+5. Write Angular controlers and so on.
+6. TEST TEST TEST!
+7. Prepare for live presentation
