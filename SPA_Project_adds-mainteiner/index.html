@@ -55,42 +55,42 @@
             </div>
         </div>
         <div class="container">
-            <div ng-repeat="add in testAdds">
-                <!-- TODO make better css -->
-                <div>
-                    {{add.title}}
-                    <br />
-                </div>
-                <div>
-                    {{add.date}}
-                    <br />
-                </div>
-                <img src="{{add.picture}}" width="150" height="150" alt="no image"/><br/>     
-                <div>
-                    {{add.text}}
-                    <br />
-                </div>
-                <div>
-                    Name: {{add.name}}
-                    <br />
-                </div>
-                <div>
-                    Email: {{add.email}}
-                    <br />
-                </div>
-                <div>
-                    tel.: {{add.tel}}
-                    <br />
+            <div class="jumbotron">
+                <div ng-repeat="add in Adds">
+                    <!-- TODO make better css -->
+                    <div>
+                        {{add.title}}
+                        <br />
+                    </div>
+                    <div>
+                        {{add.date}}
+                        <br />
+                    </div>
+                    <img ng-src="{{add.picture}}" width="150" height="150" alt="no image" /><br />
+                    <div>
+                        {{add.text}}
+                        <br />
+                    </div>
+                    <div>
+                        <strong>Name: </strong>{{add.name}}
+                        <br />
+                    </div>
+                    <div>
+                        <strong>Email: </strong>{{add.email}}
+                        <br />
+                    </div>
+                    <div>
+                        <strong>tel.: </strong>{{add.tel}}
+                        <br />
+                    </div>
                 </div>
             </div>
         </div>
-        
-
-
         <script src="app/lib/jQuery/jquery-2.1.1.min.js"></script>
         <script src="app/lib/bootsrap_3.1.1/js/bootstrap.js"></script>
         <script src="app/lib/angularJS/angular_1.3.8.js"></script>
         <script src="app/js/app.js"></script>
         <script src="app/js/controlers/addsControler.js"></script>
+        <script src="app/js/services/addsData.js"></script>
     </body>
 </html>

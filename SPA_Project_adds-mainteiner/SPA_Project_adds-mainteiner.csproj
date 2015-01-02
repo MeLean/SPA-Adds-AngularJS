@@ -61,6 +61,7 @@
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controlers\addsControler.js" />
     <Content Include="app\css\my-style.css" />
+    <Content Include="app\js\services\addsData.js" />
     <Content Include="app\lib\angularJS\angular_1.3.8.js" />
     <Content Include="app\lib\bootsrap_3.1.1\css\bootstrap-theme.css.map" />
     <Content Include="app\lib\bootsrap_3.1.1\css\bootstrap.css.map" />
@@ -92,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\js\directives\" />
+    <Folder Include="app\js\filters\" />
     <Folder Include="app\templates\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,39 +1,8 @@
 ﻿'use strict';
-addsApp.controller('AddsController', function ($scope) {
-    $scope.testAdds = [
-    {
-        title: 'add1',
-        date:   '02/01/2015',
-        name: 'Pesho',
-        picture: 'app/images/noPicture.png',
-        email: 'email@abv.bg',
-        tel: '0987234987',
-        text: 'ala bala 1',
+addsApp.controller('AddsController', function($scope, addsData) {
+    var url = '/'; // TODO edit it
+    addsData.getAdds(url, function(data) {
+        $scope.Adds = data;
+    });
 
-
-    },
-    {
-         title: 'add2',
-         date: '03/01/2015',
-         name: 'Pesho',
-         picture: 'app/images/noPicture.png',
-         email: 'email@abv.bg',
-         tel: '0987234987',
-         text: 'ala bala 2',
-
-
-     },
-     {
-          title: 'add3',
-          date: '03/01/2015',
-          name: 'Gosho',
-          picture: 'app/images/noPicture.png',
-          email: 'email2@abv.bg',
-          tel: '0987234989',
-          text: 'ala bala 3',
-
-
-      }
-        
-    ]; //TODO delete me
-})
+});
