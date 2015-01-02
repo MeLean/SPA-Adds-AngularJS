@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Adds</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="app/lib/bootsrap_3.1.1/css/bootstrap.css" rel="stylesheet" />
+        <link href="app/lib/bootsrap_3.1.1/css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="app/css/my-style.css" rel="stylesheet" />
+    </head>
+
+    <body ng-app="addsApp" ng-controller="AddsController">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Dropdown header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <input class="form-control col-lg-8" placeholder="Search" type="text">
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div ng-repeat="add in testAdds">
+                <!--
+                    title: 'add1',
+                    date:   '02/01/2015',
+                    name: 'Pesho',
+                    picture: 'images/noPicture.png',
+                    email: 'email@abv.bg',
+                    tel: '0987234987',
+                    text: 'ala bala 1',
+                    -->
+                <div>
+                    {{add.title}}
+                    <br />
+                </div>
+                <div>
+                    {{add.date}}
+                    <br />
+                </div>
+                <div>
+                    {{add.name}}
+                    <br />
+                </div>
+                <div>
+                    {{add.picture}}
+                    <br />
+                </div>
+                <div>
+                    {{add.text}}
+                    <br />
+                </div>
+                <div>
+                    {{add.email}}
+                    <br />
+                </div>
+                <div>
+                    {{add.tel}}
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <script src="app/lib/jQuery/jquery-2.1.1.min.js"></script>
+        <script src="app/lib/bootsrap_3.1.1/js/bootstrap.js"></script>
+        <script src="app/lib/angularJS/angular_1.3.8.js"></script>
+        <script src="app/js/app.js"></script>
+        <script src="app/js/controlers/addsControler.js"></script>
+    </body>
+</html>
