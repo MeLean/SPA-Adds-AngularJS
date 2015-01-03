@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <title>My Ads</title>
+        <title>My ads portal</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="app/lib/bootsrap_3.1.1/css/bootstrap.css" rel="stylesheet" />
@@ -10,36 +10,64 @@
     </head>
 
     <body ng-app="adsApp" ng-controller="AdsController">
-        <div class="navbar-fixed-top navbar navbar-default">
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Home</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/login-form">Login</a></li>
-                    <li><a href="#/register-form">Register</a></li>                    
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <input class="form-control col-lg-8" placeholder="Search" type="text">
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <div class="row">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/login-form" ng-hide="false">Login</a></li><!-- TODO hide ON LOGIN-->
+                        <li><a href="#/register-form" ng-hide="false">Register</a></li><!-- TODO hide ON LOGIN-->
+                        <li><a href="#" ng-hide="false">Logout</a></li><!-- TODO SHOW ON LOGIN-->
+                        <li class="dropdown">
+                            <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">My Ads</a></li>
+                                <li><a href="#">Publish New Ad</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Edit Profile</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div id="filter-category">
+                                <div class="label">Category filter: </div>
+                                <select id="selectCategories" class="nav-filter">
+                                    <option>edini</option>
+                                    <option>piiini</option>
+                                    <option>trva tretoto</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="filter-town">
+                                <div class="label">Town filter: </div>
+                                <select id="selectTowns" class="nav-filter">
+                                    <option>katunica</option>
+                                    <option>kiustendil</option>
+                                    <option>kazanluk</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="hidden-md hidden-sm">
+                            <form class="navbar-form">
+                                <input class="form-control" placeholder="Search" type="text">  
+                            </form>
+                        </li>
+                        <li class="hidden-md hidden-sm"><a href="#" target="self" ng-hide="false">User: KILESH{{user.name}}</a></li><!-- TODO SHOW ON LOGIN-->
+                    </ul>
+                </div>
+             
             </div>
         </div>
 
         <div class="container-fluid" ng-view id="main-view"></div>
-
+        
         <script src="app/lib/jQuery/jquery-2.1.1.min.js"></script>
         <script src="app/lib/bootsrap_3.1.1/js/bootstrap.js"></script>
         <script src="app/lib/angularJS/angular_1.3.8.js"></script>

@@ -11,7 +11,7 @@
 } 
 
 #main-view {
-    margin-top: 4%;
+    margin-top: 6.5%;
 }
 
 .ads-holder {
@@ -19,4 +19,40 @@
     padding: 0.6em;
     margin: 1em;
     border-radius: 0.5em;
+}
+
+.buttons-holder {
+    margin-top: 5%;
+    
+}
+#filter-category, #filter-town {
+   margin-top: 4%;
+   border: 0;
+   color: black;
+   background: transparent;
+   width: 25em;
+}
+
+.navbar-fixed-top {
+    padding: 0 0.5%;
+}
+#filter-category>.label, #filter-town>.label {
+    font-size: 1em;
+}
+.nav-filter {
+    background-image: url('../images/down-arrow.png');
+    width: 180px;
+    padding: 0.2em;
+    line-height: 1.2em;
+    border-radius: 0.2em;
+    background-color: transparent;
+    color: #111;
+    font-size: 1em;
+    -webkit-appearance: none;
+    box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.6);
+    outline: none;
+}
+    .nav-filter:hover {
+        color: lightgreen;
+        cursor: pointer;
 }

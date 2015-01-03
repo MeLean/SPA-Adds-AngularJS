@@ -1,1 +1,28 @@
-﻿<div> Haide logvai</div>
+﻿<form class="form-horizontal col-md-offset-4 col-md-4 col-sm-offset-0 col-sm-12 col-xs-12 text-center" id="login-form" name="loginForm">
+    <fieldset>
+        <legend>Login</legend>
+        <div class="jumbotron">
+            <div>
+                <label for="input-username" class="control-label pull-left">Username</label>
+                <div>
+                    <input type="text" data-ng-model="user.username" required="required" class="form-control"
+                           id="input-username" placeholder="Enter username">
+                </div>
+            </div>
+            <div>
+                <label for="input-password" class="control-label pull-left">Password</label>
+                <div>
+                    <input type="password" required="required" class="form-control" id="input-password" placeholder="Enter password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="buttons-holder">
+                    <button data-ng-click="login(user, loginForm)" data-ng-disabled="loginForm.$invalid" class="btn btn-primary">
+                        Login
+                    </button>
+                    <a href="#/register-form">Register here</a>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

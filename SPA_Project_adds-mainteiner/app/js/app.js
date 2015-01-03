@@ -8,5 +8,5 @@ var adsApp = angular.module('adsApp', ['ngRoute'])
                 templateUrl: 'app/templates/login-form.html'
             }).when('/register-form', {
                 templateUrl: 'app/templates/register-form.html'
-            });
+            }).otherwise({ redirectTo: 'app/templates/home.html'});
 });
