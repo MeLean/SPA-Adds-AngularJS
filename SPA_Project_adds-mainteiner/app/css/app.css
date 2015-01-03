@@ -1,0 +1,22 @@
+﻿body {
+    background: lightgreen;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+.img-circle {
+  width: 200px;
+  height: 150px;
+} 
+
+#main-view {
+    margin-top: 4%;
+}
+
+.ads-holder {
+    border: solid 2px lightseagreen;
+    padding: 0.6em;
+    margin: 1em;
+    border-radius: 0.5em;
+}
