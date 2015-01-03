@@ -1,2 +1,2 @@
 ﻿'use strict';
-var addsApp = angular.module('addsApp', []);
+var adsApp = angular.module('adsApp', []);

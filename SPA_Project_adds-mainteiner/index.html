@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <title>My Adds</title>
+        <title>My Ads</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="app/lib/bootsrap_3.1.1/css/bootstrap.css" rel="stylesheet" />
         <link href="app/lib/bootsrap_3.1.1/css/bootstrap-theme.min.css" rel="stylesheet" />
-        <link href="app/css/my-style.css" rel="stylesheet" />
+        <link href="app/css/app.css" rel="stylesheet" />
     </head>
 
-    <body ng-app="addsApp" ng-controller="AddsController">
-        <div class="navbar navbar-default">
+    <body ng-app="adsApp" ng-controller="AdsController">
+        <div class="navbar-fixed-top navbar navbar-default">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                     <span class="icon-bar"></span>
@@ -54,45 +54,36 @@
                 </ul>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid" id="main-view">
             <div ng-cloak class="jumbotron">
-                <div ng-repeat="add in Adds">
-                    <!-- TODO make better css 
-                        	"id": 362,
-            "title": "Muha",
-            "text": "Mnogo mufassaaa. Cena 5 kamili",
-            "date": "2015-01-02T20:03:24.2330000",
-            "imageDataUrl":"karakacil",
-	    "ownerName": "Muhaaaaaaaa",
-            "ownerEmail": "muha@gmail.com",
-            "ownerPhone": "7879878678",
-            "categoryId": 10,
-            "townId": 16-->
-                  
-                    <div>
-                        <strong>{{add.title}}</strong>
-                        <br />
-                    </div>
-                    <div>
-                        <strong>{{add.date | date:'dd.MMMM.yyyy'}}</strong>
-                        <br />
-                    </div>
-                    <img class="img-circle" ng-src="{{add.imageDataUrl || 'app/images/no-picture.png' }}" alt="no image" /><br />
-                    <div>
-                        {{add.text}}
-                        <br />
-                    </div>
-                    <div>
-                        <strong>Name: </strong>{{add.ownerName}}
-                        <br />
-                    </div>
-                    <div>
-                        <strong>Email: </strong>{{add.ownerEmail}}
-                        <br />
-                    </div>
-                    <div>
-                        <strong>tel.: </strong>{{add.ownerPhone}}
-                        <br />
+                <div ng-repeat="ad in Ads">
+                    <div class="ads-holder">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>{{ad.title}}</strong>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <strong>{{ad.date | date:'dd.MMMM.yyyy'}}</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img class="img-circle col-md-2" ng-src="{{ad.imageDataUrl || 'app/images/no-picture.png' }}" alt="no image" />
+                            <div class="form-group col-md-10">
+                                <div class="col-lg-10">
+                                    <span class="help-block">Advertisement:</span>
+                                    <textarea class="form-control" rows="5" id="textArea">{{ad.text}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>Name: </strong>{{ad.ownerName}}
+                        </div>
+                        <div>
+                            <strong>Email: </strong>{{ad.ownerEmail}}
+                        </div>
+                        <div>
+                            <strong>telephone: </strong>{{ad.ownerPhone}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,8 +91,9 @@
         <script src="app/lib/jQuery/jquery-2.1.1.min.js"></script>
         <script src="app/lib/bootsrap_3.1.1/js/bootstrap.js"></script>
         <script src="app/lib/angularJS/angular_1.3.8.js"></script>
+        <script src="app/lib/angularJS/angular-route.js"></script>
         <script src="app/js/app.js"></script>
-        <script src="app/js/controlers/addsControler.js"></script>
-        <script src="app/js/services/addsData.js"></script>
+        <script src="app/js/controlers/adsControler.js"></script>
+        <script src="app/js/services/adsData.js"></script>
     </body>
 </html>
