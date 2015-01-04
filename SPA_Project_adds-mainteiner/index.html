@@ -24,7 +24,7 @@
                         <li><a href="#/">Home</a></li>
                         <li><a href="#/login-form" ng-hide="false">Login</a></li><!-- TODO hide ON LOGIN-->
                         <li><a href="#/register-form" ng-hide="false">Register</a></li><!-- TODO hide ON LOGIN-->
-                        <li class="hidden-sm"><a href="" target="self" ng-hide="true">User: {{user.name || 'Guest'}}</a></li><!-- TODO SHOW ON LOGIN-->
+                        <li ng-cloak class="hidden-sm"><a href="" target="self">User: {{user.name || 'Guest'}}</a></li><!-- TODO SHOW ON LOGIN-->
                         <li><a href="#/" ng-hide="true">Logout</a></li><!-- TODO SHOW ON LOGIN-->
                         <li>
                             <div id="filter-category">
