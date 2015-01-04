@@ -30,9 +30,8 @@
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
                                 <select id="selectCategories" class="nav-filter">
-                                    <option>edini</option>
-                                    <option>piiini</option>
-                                    <option>trva tretoto</option>
+                                    <option selected="selected">All</option>
+                                    <option ng-repeat="category in categories">{{category.name}}</option>
                                 </select>
                             </div>
                         </li>
@@ -40,9 +39,8 @@
                             <div id="filter-town">
                                 <div class="label">Town filter: </div>
                                 <select id="selectTowns" class="nav-filter">
-                                    <option>katunica</option>
-                                    <option>kiustendil</option>
-                                    <option>kazanluk</option>
+                                    <option selected="selected">All</option>
+                                    <option ng-repeat="town in towns">{{town.name}}</option>
                                 </select>
                             </div>
                         </li>
@@ -70,5 +68,5 @@
         <script src="app/js/app.js"></script>
         <script src="app/js/controlers/mainController.js"></script>
         <script src="app/js/services/requestManager.js"></script>
-    </body>
+</body>
 </html>

@@ -39,9 +39,8 @@
                     <div>
                         <label for="town-list" class="control-label pull-left">Select Town: </label>
                         <select id="town-list" class="form-control">
-                            <option>katunica</option>
-                            <option>kiustendil</option>
-                            <option>kazanluk</option>
+                            <option></option>
+                            <option ng-repeat="town in towns">{{town.name}}</option>
                         </select>
                     </div>
 

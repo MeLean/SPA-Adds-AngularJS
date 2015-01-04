@@ -18,8 +18,8 @@ adsApp.factory('requestManager', function ($http, $q) {
         return defer.promise;
     }
 
-    var getDataFromUrl = function(dataUrl) {
-        return requester(dataUrl, 'GET');
+    var getDataFromUrl = function(databaseUrl) {
+        return requester(databaseUrl, 'GET');
     };
 
     return {
