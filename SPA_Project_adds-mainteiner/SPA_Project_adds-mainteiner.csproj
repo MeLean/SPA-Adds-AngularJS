@@ -59,7 +59,7 @@
   <ItemGroup>
     <Content Include="app\images\no-picture.png" />
     <Content Include="app\js\app.js" />
-    <Content Include="app\js\controlers\adsControler.js" />
+    <Content Include="app\js\controlers\mainController.js" />
     <Content Include="app\css\app.css" />
     <Content Include="app\js\services\adsData.js" />
     <Content Include="app\lib\angularJS\angular-route.js" />

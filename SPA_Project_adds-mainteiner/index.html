@@ -9,7 +9,7 @@
         <link href="app/css/app.css" rel="stylesheet" />
     </head>
 
-    <body ng-app="adsApp" ng-controller="AdsController">
+    <body ng-app="adsApp" ng-controller="MainController">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -24,8 +24,8 @@
                         <li><a href="#/">Home</a></li>
                         <li><a href="#/login-form" ng-hide="false">Login</a></li><!-- TODO hide ON LOGIN-->
                         <li><a href="#/register-form" ng-hide="false">Register</a></li><!-- TODO hide ON LOGIN-->
-                        <li class="hidden-md hidden-sm"><a href="#" target="self" ng-hide="false">User: {{user.name || 'Guest'}}</a></li><!-- TODO SHOW ON LOGIN-->
-                        <li><a href="#" ng-hide="false">Logout</a></li><!-- TODO SHOW ON LOGIN-->                       
+                        <li class="hidden-sm"><a href="" target="self" ng-hide="true">User: {{user.name || 'Guest'}}</a></li><!-- TODO SHOW ON LOGIN-->
+                        <li><a href="#/" ng-hide="true">Logout</a></li><!-- TODO SHOW ON LOGIN-->
                         <li>
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
@@ -57,18 +57,18 @@
                         </li>
                     </ul>
                 </div>
-             
+
             </div>
         </div>
 
         <div class="container-fluid" ng-view id="main-view"></div>
-        
+
         <script src="app/lib/jQuery/jquery-2.1.1.min.js"></script>
         <script src="app/lib/bootsrap_3.1.1/js/bootstrap.js"></script>
         <script src="app/lib/angularJS/angular_1.3.8.js"></script>
         <script src="app/lib/angularJS/angular-route.js"></script>
         <script src="app/js/app.js"></script>
-        <script src="app/js/controlers/adsControler.js"></script>
+        <script src="app/js/controlers/mainController.js"></script>
         <script src="app/js/services/adsData.js"></script>
     </body>
 </html>
