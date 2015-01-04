@@ -1,5 +1,5 @@
 ﻿<div ng-cloak class="jumbotron">
-    <div ng-repeat="ad in ads">
+    <div ng-repeat="ad in ads | filter: fiterByText">
         <div class="ads-holder">
             <div class="row">
                 <div class="col-md-6">

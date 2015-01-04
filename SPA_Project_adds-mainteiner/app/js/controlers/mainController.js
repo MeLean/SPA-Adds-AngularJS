@@ -7,7 +7,7 @@ adsApp.controller('MainController', function ($scope, requestManager) {
     });
 
     requestManager.getDataFromUrl(baseUrl + 'towns').then(function (data) {
-        $scope.towns = data;
+        $scope.towns = data; 
     });
 
     requestManager.getDataFromUrl(baseUrl + 'categories').then(function (data) {
