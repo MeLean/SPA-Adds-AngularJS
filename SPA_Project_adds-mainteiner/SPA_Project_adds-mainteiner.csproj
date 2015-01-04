@@ -61,7 +61,7 @@
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controlers\mainController.js" />
     <Content Include="app\css\app.css" />
-    <Content Include="app\js\services\adsData.js" />
+    <Content Include="app\js\services\requestManager.js" />
     <Content Include="app\lib\angularJS\angular-route.js" />
     <Content Include="app\lib\angularJS\angular_1.3.8.js" />
     <Content Include="app\lib\bootsrap_3.1.1\css\bootstrap-theme.css.map" />

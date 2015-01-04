@@ -1,7 +1,7 @@
 ﻿'use strict';
-adsApp.controller('MainController', function($scope, adsData) {
-    var url = 'http://softuni-ads.azurewebsites.net/api/Ads'; // TODO edit it
-    adsData.getAds(url).then( function(data) {
+adsApp.controller('MainController', function ($scope, requestManager) {
+    var adsUrl = 'http://softuni-ads.azurewebsites.net/api/Ads'; // TODO edit it
+    requestManager.getDataFromUrl(adsUrl).then(function(data) {
         $scope.ads = data.ads;
     });  
 });
