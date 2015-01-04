@@ -30,7 +30,6 @@
    border: 0;
    color: black;
    background: transparent;
-   width: 25em;
 }
 
 .navbar-fixed-top {
@@ -40,8 +39,7 @@
     font-size: 1em;
 }
 .nav-filter {
-    background-image: url('../images/down-arrow.png');
-    width: 180px;
+    width: 120px;
     padding: 0.2em;
     line-height: 1.2em;
     border-radius: 0.2em;

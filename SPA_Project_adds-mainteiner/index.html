@@ -24,16 +24,8 @@
                         <li><a href="#/">Home</a></li>
                         <li><a href="#/login-form" ng-hide="false">Login</a></li><!-- TODO hide ON LOGIN-->
                         <li><a href="#/register-form" ng-hide="false">Register</a></li><!-- TODO hide ON LOGIN-->
-                        <li><a href="#" ng-hide="false">Logout</a></li><!-- TODO SHOW ON LOGIN-->
-                        <li class="dropdown">
-                            <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">My Ads</a></li>
-                                <li><a href="#">Publish New Ad</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Edit Profile</a></li>
-                            </ul>
-                        </li>
+                        <li class="hidden-md hidden-sm"><a href="#" target="self" ng-hide="false">User: {{user.name || 'Guest'}}</a></li><!-- TODO SHOW ON LOGIN-->
+                        <li><a href="#" ng-hide="false">Logout</a></li><!-- TODO SHOW ON LOGIN-->                       
                         <li>
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
@@ -54,12 +46,15 @@
                                 </select>
                             </div>
                         </li>
-                        <li class="hidden-md hidden-sm">
-                            <form class="navbar-form">
-                                <input class="form-control" placeholder="Search" type="text">  
-                            </form>
+                        <li class="dropdown">
+                            <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">My Ads</a></li>
+                                <li><a href="#">Publish New Ad</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Edit Profile</a></li>
+                            </ul>
                         </li>
-                        <li class="hidden-md hidden-sm"><a href="#" target="self" ng-hide="false">User: KILESH{{user.name}}</a></li><!-- TODO SHOW ON LOGIN-->
                     </ul>
                 </div>
              
