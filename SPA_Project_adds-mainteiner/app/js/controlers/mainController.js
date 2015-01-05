@@ -13,14 +13,14 @@ adsApp.controller('MainController', function ($scope, requestManager, baseUrl) {
         $scope.categories = data;
     });
 
-    $scope.updateAds = function (categoryFilter, townFilter, startPage) {
+    $scope.updateAds = function (categoryFilter, townFilter, startPage, adsPerPage) {
         var categoryUrlRequest = makeUrlForRequest(categoryFilter, 'CategoryId=');
         var townRequest = makeUrlForRequest(townFilter, '&TownId=');
         var pageRequest = startPage || 1;
-
+        var pageSizeRequest = adsPerPage || 10;
         console.log(baseUrl + 'Ads?' + categoryUrlRequest + townRequest + '&StartPage=' + startPage + '&PageSize=10'); //todo delete this
         requestManager.getDataFromUrl(baseUrl + 'Ads?' + categoryUrlRequest + townRequest +
-            '&StartPage=' + pageRequest + '&PageSize=10')
+            '&StartPage=' + pageRequest + '&PageSize=' + pageSizeRequest)
                    .then(function (data) {
                        displayAds(data);
                    });

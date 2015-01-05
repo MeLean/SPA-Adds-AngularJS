@@ -29,7 +29,7 @@
                         <li>
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
-                                <select ng-model="categoryFilter" id="select-categories" class="nav-filter" ng-change="updateAds(categoryFilter, townFilter, startPage)"
+                                <select ng-model="categoryFilter" id="select-categories" class="nav-filter" ng-change="updateAds(categoryFilter, townFilter, startPage, adsPerPage)"
                                         ng-options="category.id as category.name for category in categories">
                                     <option value="" ng-if="true">All</option>
                                 </select>
@@ -38,7 +38,7 @@
                         <li>
                             <div id="filter-town">
                                 <div class="label">Town filter: </div>
-                                <select ng-model="townFilter" id="select-towns" class="nav-filter" ng-change="updateAds(categoryFilter, townFilter, startPage)"
+                                <select ng-model="townFilter" id="select-towns" class="nav-filter" ng-change="updateAds(categoryFilter, townFilter, startPage, adsPerPage)"
                                         ng-options="town.id as town.name for town in towns">
                                     <option value="" ng-if="true">All</option>
                                 </select>
@@ -47,18 +47,24 @@
                         <li>
                             <div id="page-change" ng-cloack>
                                 <div class="label">Page: </div>
-                                <select ng-model="startPage" id="select-pages" class="nav-page" ng-change="updateAds(categoryFilter, townFilter, startPage)"
+                                <select ng-model="startPage" id="select-pages" class="nav-page" ng-change="updateAds(categoryFilter, townFilter, startPage, adsPerPage)"
                                         ng-options="page as page for page in pagesArr">
                                     <option value="" ng-if="false"></option>
                                 </select>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
+                            <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">My Ads</a></li>
                                 <li><a href="#">Publish New Ad</a></li>
                                 <li class="divider"></li>
+                                <li>
+                                    <form class="navbar-form">
+                                        <input ng-model="adsPerPage" class="form-control" placeholder="Ads number per page" type="text"
+                                                ng-change="updateAds(categoryFilter, townFilter, startPage, adsPerPage)">
+                                    </form>
+                                </li>
                                 <li>
                                     <form class="navbar-form">
                                         <input ng-model="fiterByText" class="form-control" placeholder="Type text to filter adds" type="text">
