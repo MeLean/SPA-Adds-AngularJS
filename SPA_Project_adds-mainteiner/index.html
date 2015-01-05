@@ -29,7 +29,7 @@
                         <li>
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
-                                <select ng-model="categoryFilter" id="selectCategories" class="nav-filter">
+                                <select ng-model="categoryFilter" id="select-categories" class="nav-filter">
                                     <option selected="selected">All</option>
                                     <option ng-repeat="category in categories">{{category.name}}</option>
                                 </select>
@@ -38,13 +38,22 @@
                         <li>
                             <div id="filter-town">
                                 <div class="label">Town filter: </div>
-                                <select ng-model="townFilter" id="selectTowns" class="nav-filter">
+                                <select ng-model="townFilter" id="select-towns" class="nav-filter">
                                     <option selected="selected">All</option>
                                     <option ng-repeat="town in towns">{{town.name}}</option>
                                 </select>
                             </div>
                         </li>
-                        <li class="dropdown">
+                        <li>
+                            <div id="page-change">
+                                <div class="label">Page: </div>
+                                <select ng-model="pageChanger" id="select-pages" class="nav-page">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>99</option>
+                                </select>
+                            </div>
+                        </li><li class="dropdown">
                             <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">My Ads</a></li>

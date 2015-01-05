@@ -25,21 +25,19 @@
     margin-top: 5%;
     
 }
-#filter-category, #filter-town {
-   margin-top: 4%;
+.navbar-fixed-top {
+    padding: 0 0.5%;
+}
+#filter-category, #filter-town, #page-change {
+   margin-top: 13px;
    border: 0;
    color: black;
    background: transparent;
 }
-
-.navbar-fixed-top {
-    padding: 0 0.5%;
-}
-#filter-category>.label, #filter-town>.label {
+#filter-category>.label, #filter-town>.label, #page-change>.label{
     font-size: 1em;
 }
-.nav-filter {
-    width: 120px;
+.nav-filter, .nav-page {
     padding: 0.2em;
     line-height: 1.2em;
     border-radius: 0.2em;
@@ -50,7 +48,14 @@
     box-shadow: inset 0 0 10px 0 rgba(0,0,0,0.6);
     outline: none;
 }
-    .nav-filter:hover {
+    .nav-filter:hover, .nav-page:hover {
         color: lightgreen;
         cursor: pointer;
     }
+
+.nav-filter {
+    width: 100px;
+}
+.nav-page {
+    width: 34px;
+}
