@@ -14,8 +14,8 @@ adsApp.controller('MainController', function ($scope, requestManager) {
         $scope.pagesArr = pagesArr;
     });
 
-    requestManager.getDataFromUrl(baseUrl + 'towns').then(function (data) {
-        $scope.towns = data; 
+    requestManager.getDataFromUrl(baseUrl + 'towns').then(function (data) { 
+        $scope.towns = data;
     });
 
     requestManager.getDataFromUrl(baseUrl + 'categories').then(function (data) {

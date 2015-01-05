@@ -29,23 +29,21 @@
                         <li>
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
-                                <select ng-model="categoryFilter" id="select-categories" class="nav-filter">
-                                    <option selected="selected">All</option>
-                                    <option ng-repeat="category in categories">{{category.name}}</option>
+                                <select ng-model="categoryFilter" id="select-categories" class="nav-filter" ng-options="category.id as category.name for category in categories">
+                                    <option value="" ng-if="true">All</option>
                                 </select>
                             </div>
                         </li>
                         <li>
                             <div id="filter-town">
                                 <div class="label">Town filter: </div>
-                                <select ng-model="townFilter" id="select-towns" class="nav-filter">
-                                    <option selected="selected">All</option>
-                                    <option ng-repeat="town in towns">{{town.name}}</option>
+                                <select ng-model="townFilter" id="select-towns" class="nav-filter" ng-options="town.id as town.name for town in towns">
+                                    <option value="" ng-if="true">All</option>
                                 </select>
                             </div>
                         </li>
                         <li>
-                            <div id="page-change">
+                            <div id="page-change" ng-cloack>
                                 <div class="label">Page: </div>
                                 <select ng-model="pageChanger" id="select-pages" class="nav-page" ng-options="page as page for page in pagesArr">
                                     <option value="" ng-if="false"></option>
