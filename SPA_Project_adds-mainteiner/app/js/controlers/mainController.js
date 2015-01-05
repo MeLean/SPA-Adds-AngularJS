@@ -18,7 +18,7 @@ adsApp.controller('MainController', function ($scope, requestManager, baseUrl) {
         var townRequest = makeUrlForRequest(townFilter, '&TownId=');
         var pageRequest = startPage || 1;
         var pageSizeRequest = adsPerPage || 10;
-        console.log(baseUrl + 'Ads?' + categoryUrlRequest + townRequest + '&StartPage=' + startPage + '&PageSize=10'); //todo delete this
+
         requestManager.getDataFromUrl(baseUrl + 'Ads?' + categoryUrlRequest + townRequest +
             '&StartPage=' + pageRequest + '&PageSize=' + pageSizeRequest)
                    .then(function (data) {
@@ -35,15 +35,28 @@ adsApp.controller('MainController', function ($scope, requestManager, baseUrl) {
     }
 
     function displayAds(data) {
-        var pages = data.numPages;
-        var pagesArr = [];
+        var ads = data.ads;
+        if (ads.length > 0) {
+            var pages = data.numPages;
+            var pagesArr = [];
 
-        $scope.ads = data.ads;
+            $scope.ads = ads;
 
-        for (var i = 1; i <= pages; i++) {
-            pagesArr.push(i);
+            for (var i = 1; i <= pages; i++) {
+                pagesArr.push(i);
+            }
+
+            $scope.pagesArr = pagesArr;
+        } else {
+            // TODO dump way think another
+            $scope.ads = [
+                {
+                    text: "There are no such ads!"
+                }
+            ];
         }
+        
 
-        $scope.pagesArr = pagesArr;
+        
     }
 });
