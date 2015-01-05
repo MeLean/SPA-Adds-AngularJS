@@ -47,11 +47,10 @@
                         <li>
                             <div id="page-change">
                                 <div class="label">Page: </div>
-                                <select ng-model="pageChanger" id="select-pages" class="nav-page">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>99</option>
+                                <select ng-model="pageChanger" id="select-pages" class="nav-page" ng-options="page as page for page in pagesArr">
+                                    <option value="" ng-if="false"></option>
                                 </select>
+
                             </div>
                         </li><li class="dropdown">
                             <a href="" target="self" class="dropdown-toggle" data-toggle="dropdown">Options<b class="caret"></b></a>
