@@ -59,8 +59,10 @@
   <ItemGroup>
     <Content Include="app\images\no-picture.png" />
     <Content Include="app\js\app.js" />
-    <Content Include="app\js\controlers\mainController.js" />
+    <Content Include="app\js\controllers\LoginController.js" />
+    <Content Include="app\js\controllers\mainController.js" />
     <Content Include="app\css\app.css" />
+    <Content Include="app\js\controllers\RegisterController.js" />
     <Content Include="app\js\services\requestManager.js" />
     <Content Include="app\lib\angularJS\angular-route.js" />
     <Content Include="app\lib\angularJS\angular_1.3.8.js" />
@@ -86,7 +88,7 @@
     <Content Include="app\lib\bootsrap_3.1.1\js\bootstrap.min.js" />
     <Content Include="app\lib\bootsrap_3.1.1\js\npm.js" />
     <Content Include="app\lib\jQuery\jquery-2.1.1.min.js" />
-    <Content Include="app\templates\no-ads.html" />
+    <Content Include="app\lib\notify.js" />
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\register-form.html" />
     <Content Include="app\templates\login-form.html" />
