@@ -1,13 +1,14 @@
 ﻿'use strict';
-adsApp.controller('RegisterController', function ($scope, requestManager, baseUrl, $location) {
+adsApp.controller('RegisterController', ['$scope', 'requestManager', 'baseUrl', 'messaging', function ($scope, requestManager, baseUrl, messaging) {
 
     $scope.register = function() {
         var user = $scope.user;
         var url = baseUrl + 'user/register';
         requestManager.register(user, url)
             .then(function(data) {
-                $("#message").notify('Registration successful! Please, login', 'success', { autoHideDelay: 3000, globalPosition: 'top center' });
-                alert(JSON.stringify(data)); // todo delete this
-        });
+                messaging.successMsg('Registration successful! Please, login');
+                $scope.username = data.username;
+                console.log(data); // todo delete this
+            });
     }
-});
+}]);

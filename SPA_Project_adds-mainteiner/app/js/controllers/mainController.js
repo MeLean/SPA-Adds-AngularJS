@@ -1,5 +1,5 @@
 ﻿'use strict';
-adsApp.controller('MainController', function ($scope, requestManager, baseUrl) {
+adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'messaging', function ($scope, requestManager, baseUrl, messaging) {
 
     requestManager.getDataFromUrl(baseUrl + 'ads').then(function (data) {
         displayAds(data);
@@ -48,12 +48,11 @@ adsApp.controller('MainController', function ($scope, requestManager, baseUrl) {
 
             $scope.pagesArr = pagesArr;
         } else {
-            $scope.ads = ads;
-            $("#message").notify('There are no such ads!', 'error', { autoHideDelay: 3000, globalPosition: 'top center' });
-
+            $scope.ads = ads; 
+            messaging.errorMsg('There are no such ads!');
         }
         
 
         
     }
-});
+}]);
