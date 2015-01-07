@@ -21,10 +21,15 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
 
         requestManager.getDataFromUrl(baseUrl + 'Ads?' + categoryUrlRequest + townRequest +
             '&StartPage=' + pageRequest + '&PageSize=' + pageSizeRequest)
-                   .then(function (data) {
-                       displayAds(data);
-                   });
-    }
+                   .then(
+                       function (data) {
+                           displayAds(data);
+                       },
+                       function (data) {
+                           messaging.errorMsg('request failed');
+                           console.log(data);
+                       });
+        }
 
     function makeUrlForRequest(filter, str) {
         if (filter) {
