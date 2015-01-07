@@ -50,9 +50,6 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
         } else {
             $scope.ads = ads; 
             messaging.errorMsg('There are no such ads!');
-        }
-        
-
-        
+        }  
     }
 }]);
