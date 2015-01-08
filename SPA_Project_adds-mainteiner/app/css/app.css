@@ -2,6 +2,9 @@
     background: lightgreen;
 }
 
+footer {
+    text-align: center;
+}
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;
 }
@@ -14,10 +17,9 @@
     margin-top: 6.5%;
 }
 
-/*#messageBox {
-    width: 100%;
-    line-height: 5%;
-}*/
+#header-contain {
+    text-align: center;
+}
 
 .ads-holder {
     border: solid 2px lightseagreen;

@@ -22,10 +22,10 @@
                 <div class="row">
                     <ul class="nav navbar-nav">
                         <li><a href="#/">Home</a></li>
-                        <li><a href="#/login-form" data-ng-hide="false">Login</a></li><!-- TODO hide ON LOGIN-->
-                        <li><a href="#/register-form" data-ng-hide="false">Register</a></li><!-- TODO hide ON LOGIN-->
+                        <li><a href="#/login-form" data-ng-if="!isLoged">Login</a></li><!-- TODO hide ON LOGIN-->
+                        <li><a href="#/register-form" data-ng-if="!isLoged">Register</a></li><!-- TODO hide ON LOGIN-->
                         <li data-ng-cloak class="hidden-sm"><a href="" target="self">Hello, {{username || 'Guest'}}</a></li><!-- TODO SHOW ON LOGIN-->
-                        <li><a href="#/" data-ng-hide="true">Logout</a></li><!-- TODO SHOW ON LOGIN-->
+                        <li><a href="#/" data-ng-if="isLoged">Logout</a></li><!-- TODO SHOW ON LOGIN-->
                         <li>
                             <div id="filter-category">
                                 <div class="label">Category filter: </div>
@@ -62,7 +62,7 @@
                                 <li>
                                     <form class="navbar-form">
                                         <input data-ng-model="adsPerPage" class="form-control" placeholder="Ads number per page" type="text"
-                                                data-ng-change="updateAds(categoryFilter, townFilter, startPage, adsPerPage)">
+                                               data-ng-change="updateAds(categoryFilter, townFilter, startPage, adsPerPage)">
                                     </form>
                                 </li>
                                 <li>
@@ -81,7 +81,7 @@
         </div>
         <div id="messageBox"></div>
         <div class="container-fluid" data-ng-view id="main-view"></div>
-
+        <footer>© 2014 by Software University Foundation, No Rights Reserved</footer>
         <script src="app/lib/jQuery/jquery-2.1.1.min.js"></script>
         <script src="app/lib/bootsrap_3.1.1/js/bootstrap.js"></script>
         <script src="app/lib/angularJS/angular_1.3.8.js"></script>
@@ -93,5 +93,6 @@
         <script src="app/js/controllers/LoginController.js"></script>
         <script src="app/js/services/requestManager.js"></script>
         <script src="app/js/services/messaging.js"></script>
+        <script src="app/js/services/authentification.js"></script>
     </body>
 </html>

@@ -1,5 +1,5 @@
 ﻿'use strict';
-adsApp.factory('requestManager', function ($http, $q) {
+adsApp.factory('requestManager', ['$http', '$q', function ($http, $q) {
     var requester = function (obj, url, method) {
         var defer = $q.defer();
 
@@ -34,4 +34,4 @@ adsApp.factory('requestManager', function ($http, $q) {
         register: register,
         login: login,
     }
-});
+}]);

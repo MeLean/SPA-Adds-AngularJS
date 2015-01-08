@@ -1,6 +1,6 @@
 ﻿'use strict';
 adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'messaging', function ($scope, requestManager, baseUrl, messaging) {
-
+    $scope.header = 'Home';
     requestManager.getDataFromUrl(baseUrl + 'ads').then(function (data) {
         displayAds(data);
     });
