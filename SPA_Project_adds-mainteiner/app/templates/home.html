@@ -1,9 +1,8 @@
-﻿
-<div ng-cloak class="jumbotron">
+﻿<div data-ng-cloak class="jumbotron">
     <div id="header-contain" class="hidden-sm hidden-xs">
         <h2>Ads-{{header}}</h2>
     </div>
-    <div ng-repeat="ad in ads | filter: fiterByText">
+    <div data-ng-repeat="ad in ads | filter: fiterByText">
                   <div class="ads-holder">
                       <div class="row">
                           <div class="col-md-6">
@@ -14,7 +13,7 @@
                           </div>
                       </div>
                       <div class="row">
-                          <img src="" class="img-circle col-md-2" ng-src="{{ad.imageDataUrl || 'app/images/no-picture.png' }}" alt="no image" />
+                          <img src="" class="img-circle col-md-2" data-ng-src="{{ad.imageDataUrl || 'app/images/no-picture.png' }}" alt="no image" />
                           <div class="form-group col-md-10">
                               <div class="col-md-10">
                                   <span class="help-block">Advertisement:</span>

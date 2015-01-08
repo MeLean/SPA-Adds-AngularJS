@@ -1,16 +1,17 @@
 ﻿'use strict';
 
-adsApp.controller('LoginController', ['$scope', '$location', 'requestManager', 'baseUrl', 'messaging', 'authentification',
-    function ($scope, $location, requestManager, baseUrl, messaging, authentification) {
+adsApp.controller('LoginController', ['$scope', '$location', '$rootScope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
+    function ($scope, $location, $rootScope, requestManager, baseUrl, messaging, authentification) {
 
-    $scope.login = function () {
-        $scope.header = 'Login';
+    $scope.login = function () { 
         var user = $scope.user;
         var url = baseUrl + 'user/login';
-        requestManager.login(user, url)
+        requestManager.loginToSystem(user, url)
             .then(function(data) {  
                 messaging.successMsg('Login successful');
                 authentification.saveUser(data);
+                $rootScope.username = data.username; 
+                $rootScope.isLogged = true;
                 $location.path('/');
                 console.log(data); // todo delete this
         }, function(data) {

@@ -21,17 +21,13 @@ adsApp.factory('requestManager', ['$http', '$q', function ($http, $q) {
         return requester(null, databaseUrl, 'GET');
     }
 
-    var register = function (obj, databaseUrl) {
+    var loginToSystem = function (obj, databaseUrl) {
         return requester(obj, databaseUrl, 'POST');
     }
 
-    var login = function (obj, databaseUrl) {
-        return requester(obj, databaseUrl, 'POST');
-    }  
 
     return {
         getDataFromUrl: getDataFromUrl,
-        register: register,
-        login: login,
+        loginToSystem: loginToSystem,
     }
 }]);

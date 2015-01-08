@@ -1,16 +1,17 @@
 ﻿'use strict';
-adsApp.controller('RegisterController', ['$scope', '$location', 'requestManager', 'baseUrl', 'messaging', 'authentification', function ($scope, $location, requestManager, baseUrl, messaging, authentification) {
+adsApp.controller('RegisterController', ['$scope', '$location', '$rootScope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
+    function ($scope, $location, $rootScope, requestManager, baseUrl, messaging, authentification) {
 
     $scope.register = function () {
-        $scope.header = 'Register';
         var user = $scope.user;
         var url = baseUrl + 'user/register';
         if (user.password === user.confirmPassword) {
-            requestManager.register(user, url)
+            requestManager.loginToSystem(user, url)
                 .then(function (data) {
                     messaging.successMsg('Registration successful!');
-                    authentification.saveUser(data);
-                    $scope.isLoged = true;
+                    authentification.saveUser(data); 
+                    $rootScope.username = data.username;
+                    $rootScope.isLogged = true;
                     $location.path('/');
                     console.log(data); // todo delete this
                 }, function (data) {
