@@ -3,7 +3,7 @@
 adsApp.controller('PublishAdController', ['$scope', '$location', '$rootScope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
     function ($scope, $location, $rootScope, requestManager, baseUrl, messaging, authentification) {
         $scope.fileSelected = function (fileInputField) {
-            delete $scope.ad.imageDataUrl;
+            //delete $scope.ad.imageDataUrl;
             var file = fileInputField.files[0];
             if (file.type.match(/image\/.*/)) {
                 var reader = new FileReader();
@@ -14,6 +14,10 @@ adsApp.controller('PublishAdController', ['$scope', '$location', '$rootScope', '
                 reader.readAsDataURL(file);
             } else {
                 $(".image-box").html("<p>File type not supported!</p>");
+            }
+
+            $scope.submitAd = function(ad) {
+                
             } 
         };
     }]);

@@ -94,7 +94,6 @@
     <Content Include="app\lib\bootsrap_3.1.1\js\npm.js" />
     <Content Include="app\lib\jQuery\jquery-2.1.1.min.js" />
     <Content Include="app\lib\notify.js" />
-    <Content Include="app\templates\user-home.html" />
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\publish-ad.html" />
     <Content Include="app\templates\register-form.html" />
