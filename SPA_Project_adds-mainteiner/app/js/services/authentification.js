@@ -2,7 +2,7 @@
 adsApp.factory('authentification', function () {
     var key = 'user';
 
-    var saveUser = function(data) {
+    var saveUser = function (data) {
         sessionStorage.setItem(key, angular.toJson(data));
     }
 
@@ -22,14 +22,20 @@ adsApp.factory('authentification', function () {
         return headers;
     }
 
+    var isLogged = function () {
+        return !!getUser();
+    }
+
     var clearUser = function() {
-        localStorage.removeItem(key);
+        sessionStorage.removeItem(key);
     }
 
     return {
         saveUser : saveUser,
         getUser : getUser,
         getHeaders : getHeaders,
-        clearUser : clearUser
+        clearUser: clearUser,
+        isLogged : isLogged
+
     }
 });

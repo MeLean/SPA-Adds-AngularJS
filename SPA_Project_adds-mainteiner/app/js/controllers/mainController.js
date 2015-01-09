@@ -1,7 +1,7 @@
 ﻿'use strict';
 adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'messaging',
-    function ($scope, requestManager, baseUrl, messaging) {
-    $scope.header = 'Home';
+    function ($scope, requestManager, baseUrl, messaging) {  
+    $scope.header = 'Add-Home';
     requestManager.getDataFromUrl(baseUrl + 'ads').then(function (data) {
         displayAds(data);
     });
@@ -30,7 +30,7 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
                            messaging.errorMsg('request failed');
                            console.log(data);
                        });
-        }
+        }  
 
     function makeUrlForRequest(filter, str) {
         if (filter) {

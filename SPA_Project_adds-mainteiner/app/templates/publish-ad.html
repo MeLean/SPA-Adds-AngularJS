@@ -1,64 +1,51 @@
-﻿<div ng-show="isLogged"> <!-- make it work-->
-    <form ng-controller="PublishAdController" class="form-horizontal col-md-offset-4 col-md-4 col-sm-offset-0 col-sm-12 col-xs-12 text-center" id="login-form" name="loginForm">
-        <fieldset>
-            <legend>Publish an ad</legend>
-            <div class="container-fluid col-md-12 col-sm-12 col-xs-12 clearfix">
-                <div class="row">
-                    <div class="col-md-9 col-sm-9 col-xs-12">
-                        <div class="form-group">
-                            <label class="col-md-2" for="ad-title">Title: </label>
-                            <input type="text" data-ng-model="ad.title" required="required" id="ad-title"
-                                   class="form-control col-md-10"
-                                   placeholder="Title" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-2" for="ad-text">Text: </label>
-                            <textarea class="form-control col-md-10" required="required" data-ng-model="ad.text"
-                                      name="adTextArea" id="ad-text"
-                                      cols="40" rows="5"></textarea>
+﻿<div ng-show="isLogged" ng-controller="PublishAdController">
+    <div class="jumbotron col-md-offset-4 col-md-4 col-sm-offset-0 col-sm-12 col-xs-12">
+        <div class="container">
+            <form class="form-horizontal text-center" id="publish-form" name="publishForm">
+                <fieldset>
+                    <legend>{{AdHeader}}</legend>
+                    <div class="form-group">
+                        <label for="title" class="col-lg-2 control-label">Title</label>
+                        <div class="col-lg-10">
+                            <input class="form-control" id="title" placeholder="Title" type="text" required="required" data-ng-model="ad.title">
                         </div>
                     </div>
-                    <div class="ad-img-container col-md-3 col-sm-3 col-xs-12">
-                        <img src="" class="image-box" alt="ad image" data-ng-src="{{ad.imageDataUrl}}" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                        <label class="col-md-2">Image: </label>
-                        <!--todo make the image loader-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div>
-                            <label for="town-list" class="control-label pull-left">Select Town: </label>
-                            <select data-ng-model="ad.townId" class="form-control" data-ng-options="town.id as town.name for town in towns">
-                                <option value="" data-ng-if="false"></option>
-                            </select>
+                    <div class="form-group">
+                        <label for="textArea" class="col-lg-2 control-label">Text</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" rows="3" id="textArea" placeholder="Enter, ad`s text" required="required" data-ng-model="ad.text"></textarea>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="label">Select Category: </div>
-                        <select data-ng-model="ad.categoryId" class="form-control" data-ng-options="category.id as category.name for category in categories">
-                            <option value="" data-ng-if="false"></option>
-                        </select>
+                    <div class="form-group">
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" onchange="angular.element(this).scope().fileSelected(this)" />
+                        <div class="image-box">
+                            <img src="" data-ng-src="{{ad.imageDataUrl}}" alt="There is no image uploaded!" />
+                        </div>
                     </div>
-                </div>
-                <div class="form-group pull-left col-md-12 col-sm-12 col-xs-12">
-                    <div>
-                        <button data-ng-click="publishAd(ad, adPublishForm)"
-                                data-ng-disabled="adPublishForm.$invalid"
-                                class="btn form-btn col-md-4">
-                            Publish
-                        </button>
-                        <a href="/home" class="btn form-btn col-md-4 col-md-offset-1">Cancel</a>
+                    <div class="form-group">
+                        <label for="category-select" class="col-lg-2 control-label">Category</label>
+                        <div class="col-lg-10">
+                            <select data-ng-model="ad.categoryId" class="form-control" id="category-select" data-ng-options="category.id as category.name for category in categories"></select>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </fieldset>
-    </form>
+                    <div class="form-group">
+                        <label for="town-select" class="col-lg-2 control-label">Town</label>
+                        <div class="col-lg-10">
+                            <select data-ng-model="ad.townId" id="town-select" class="form-control" data-ng-options="town.id as town.name for town in towns"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <a href="#/" class="btn btn-default">Cancel</a>
+                            <button type="submit" class="btn btn-primary" data-ng-click="submitAd(ad)" data-ng-disabled="publishform.$invalid">Send</button>
+                        </div>
+                    </div>
+</fieldset>
+        </form>
+    </div>
+    </div>
 </div>
 
 <div ng-hide="isLogged" class="centered-text">
@@ -66,6 +53,4 @@
         <button type="button" class="close" data-dismiss="alert">×</button>
         <h3>Please <a class="alert-link" href="#/login-form">login</a> or <a class="alert-link" href="#/register-form">register</a> to publish an ad!</h3>
     </div>
-   
 </div>
-

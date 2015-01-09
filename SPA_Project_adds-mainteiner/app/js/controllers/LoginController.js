@@ -10,9 +10,9 @@ adsApp.controller('LoginController', ['$scope', '$location', '$rootScope', 'requ
             .then(function(data) {  
                 messaging.successMsg('Login successful');
                 authentification.saveUser(data);
-                $rootScope.username = data.username; 
-                $rootScope.isLogged = true;
-                $location.path('/');
+                $rootScope.username = data.username;
+                $rootScope.isLogged = authentification.isLogged();
+                $location.path('/user/home');
                 console.log(data); // todo delete this
         }, function(data) {
             messaging.errorMsg('Login unsuccessful!'); 

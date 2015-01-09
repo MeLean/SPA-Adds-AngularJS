@@ -11,8 +11,8 @@ adsApp.controller('RegisterController', ['$scope', '$location', '$rootScope', 'r
                     messaging.successMsg('Registration successful!');
                     authentification.saveUser(data); 
                     $rootScope.username = data.username;
-                    $rootScope.isLogged = true;
-                    $location.path('/');
+                    $rootScope.isLogged = authentification.isLogged();
+                    $location.path('/user/home');
                     console.log(data); // todo delete this
                 }, function (data) {
                     var details = angular.toJson(data.modelState);
