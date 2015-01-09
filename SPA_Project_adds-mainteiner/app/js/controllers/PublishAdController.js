@@ -15,9 +15,17 @@ adsApp.controller('PublishAdController', ['$scope', '$location', '$rootScope', '
             } else {
                 $(".image-box").html("<p>File type not supported!</p>");
             }
-
-            $scope.submitAd = function(ad) {
-                
-            } 
         };
+
+        $scope.submitAd = function (ad) {
+            var headers = authentification.getHeaders();
+            var databaseUrl = baseUrl + 'user/ads';
+            requestManager.uploadUserAd(ad, databaseUrl, headers).then(function () {
+                $location.path('/user/ads'); // todo make my ads
+                messaging.successMsg('The was added successful!');
+            }, function (error) {
+                messaging.errorMsg('There was a problem getting data upload! Message: ' + error.message);
+
+            });
+        }
     }]);

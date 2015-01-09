@@ -1,16 +1,17 @@
 ﻿'use strict';
 adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'messaging',
-    function ($scope, requestManager, baseUrl, messaging) {  
-    $scope.header = 'Add-Home';
-    requestManager.getDataFromUrl(baseUrl + 'ads').then(function (data) {
-        displayAds(data);
-    });
+    function ($scope, requestManager, baseUrl, messaging) {
 
-    requestManager.getDataFromUrl(baseUrl + 'towns').then(function (data) { 
+    // todo do some messaging
+        requestManager.getDataFromUrl(baseUrl + 'ads', null).then(function (data) {
+            displayAds(data);
+        });
+
+    requestManager.getDataFromUrl(baseUrl + 'towns', null).then(function (data) {
         $scope.towns = data;
     });
 
-    requestManager.getDataFromUrl(baseUrl + 'categories').then(function (data) {
+    requestManager.getDataFromUrl(baseUrl + 'categories', null).then(function (data) {
         $scope.categories = data;
     });
 

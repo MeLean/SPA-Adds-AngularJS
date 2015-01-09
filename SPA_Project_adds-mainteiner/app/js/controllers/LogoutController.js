@@ -4,7 +4,7 @@ adsApp.controller('LogoutController', ['$scope','$location', '$rootScope', 'mess
         $scope.logout = function() {
             authentification.clearUser();
             $rootScope.username = undefined;
-            $location.path('/');
+            $location.path('/login-form');
             messaging.successMsg('Logout successful!');
         }
     }]);

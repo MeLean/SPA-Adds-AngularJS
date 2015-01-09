@@ -2,9 +2,9 @@
 adsApp.factory('requestManager', ['$http', '$q', function ($http, $q) {
     var requester = function (obj, url, method, headers) {
         var defer = $q.defer();
-
+        var requestingHeaders = headers || {};
         $http({
-            heders: headers,
+            headers: requestingHeaders,
             url: url,
             method: method,
             data: obj
@@ -18,8 +18,8 @@ adsApp.factory('requestManager', ['$http', '$q', function ($http, $q) {
         return defer.promise;
     }
 
-    var getDataFromUrl = function(databaseUrl) {
-        return requester(null, databaseUrl, 'GET', null);
+    var getDataFromUrl = function (databaseUrl, headers) {
+        return requester(null, databaseUrl, 'GET', headers);
     }
 
     var loginToSystem = function (obj, databaseUrl) {

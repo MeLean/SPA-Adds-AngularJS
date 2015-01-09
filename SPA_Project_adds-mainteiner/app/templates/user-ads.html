@@ -1,8 +1,8 @@
-﻿<div data-ng-cloak class="jumbotron">
+﻿<div data-ng-UserAdsController data-ng-cloak class="jumbotron">
     <div id="header-contain" class="hidden-sm hidden-xs">
-        <h2>Ads-Home</h2>
+        <h2>My Ads</h2>
     </div>
-    <div data-ng-repeat="ad in ads | filter: fiterByText">
+    <div data-ng-repeat="ad in userAds | filter: fiterByText">
         <div class="ads-holder">
             <div class="row">
                 <div class="col-md-6">
@@ -29,6 +29,9 @@
             </div>
             <div>
                 <strong>telephone: </strong>{{ad.ownerPhone}}
+            </div>
+            <div>
+                <strong>Status: </strong>{{ad.status}}
             </div>
         </div>
     </div>
