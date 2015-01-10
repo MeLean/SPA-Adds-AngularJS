@@ -30,9 +30,14 @@ adsApp.factory('requestManager', ['$http', '$q', 'authentification', function ($
         return requester(obj, databaseUrl, 'POST');
     }
 
+    var putSomeData = function (obj, databaseUrl) {
+        return requester(obj, databaseUrl, 'PUT');
+    }
+
     return {
         getDataFromUrl: getDataFromUrl,
         loginToSystem: loginToSystem,
         uploadUserAd: uploadUserAd,
+        putSomeData: putSomeData
     }
 }]);
