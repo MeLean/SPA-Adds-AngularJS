@@ -1,13 +1,23 @@
 ﻿'use strict';
 
-adsApp.controller('UserHomeController', ['$scope', '$location', '$rootScope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
+adsApp.controller('UserAdsController', ['$scope', '$location', '$rootScope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
     function ($scope, $location, $rootScope, requestManager, baseUrl, messaging, authentification) {
-        var headers = authentification.getHeaders();
-       
-        requestManager.getDataFromUrl(baseUrl + 'user/ads', headers).then(function (data) {
-      
-            console.log(data);
-        }, function(error) {
-            messaging.errorMsg('There was a problem getting data! Message: ' + error.message);
-        });
+        var isLogged = authentification.isLogged(); 
+        if (isLogged) {
+            var headers = authentification.getHeaders();
+            var pageRequest = $rootScope.startPage || 1;
+            var pageSizeRequest = $rootScope.adsPerPage || 10;
+            var status = '';  //todo fix status request
+            var databaseUrl = baseUrl + 'user/ads?' + status + '&StartPage=' + pageRequest + '&PageSize=' + pageSizeRequest;
+            requestManager.getDataFromUrl(databaseUrl, headers).then(function (data) {
+                $scope.ads = data.ads;
+               console.log(data);
+            }, function (error) {
+                messaging.errorMsg('There was a problem getting data! Message: ' + error.message);
+            });
+        } else {
+            $location.path('/please-login');
+        }
+
+
     }]);

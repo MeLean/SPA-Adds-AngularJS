@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="app\images\no-picture.png" />
     <Content Include="app\js\app.js" />
+    <Content Include="app\js\controllers\EditProfileController.js" />
     <Content Include="app\js\controllers\PublishAdController.js" />
     <Content Include="app\js\controllers\LoginController.js" />
     <Content Include="app\js\controllers\LogoutController.js" />
@@ -96,7 +97,9 @@
     <Content Include="app\lib\jQuery\jquery-2.1.1.min.js" />
     <Content Include="app\lib\notify.js" />
     <Content Include="app\templates\home.html" />
+    <Content Include="app\templates\please-login.html" />
     <Content Include="app\templates\publish-ad.html" />
+    <Content Include="app\templates\edit-profile.html" />
     <Content Include="app\templates\register-form.html" />
     <Content Include="app\templates\login-form.html" />
     <Content Include="app\templates\user-ads.html" />

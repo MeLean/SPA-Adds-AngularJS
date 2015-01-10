@@ -2,7 +2,6 @@
 
 adsApp.controller('LoginController', ['$scope', '$location', '$rootScope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
     function ($scope, $location, $rootScope, requestManager, baseUrl, messaging, authentification) {
-
     $scope.login = function () { 
         var user = $scope.user;
         var url = baseUrl + 'user/login';

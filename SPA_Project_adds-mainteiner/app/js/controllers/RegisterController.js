@@ -22,6 +22,5 @@ adsApp.controller('RegisterController', ['$scope', '$location', '$rootScope', 'r
         } else {
             messaging.errorMsg('Passwords do not match!');
         }
-
     }
 }]);
