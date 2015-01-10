@@ -27,6 +27,7 @@ adsApp.controller('EditAdController', ['$scope', '$location', '$routeParams', '$
         };
 
         $scope.editAd = function (ad) {
+            console.log(ad);
             var databaseUrl = baseUrl + 'user/ads/' + ad.id;
             requestManager.putSomeData(ad, databaseUrl).then(function(data) {
                 messaging.successMsg('Ad edited successful');
