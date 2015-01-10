@@ -14,7 +14,7 @@ adsApp.controller('LoginController', ['$scope', '$location', '$rootScope', 'requ
                 $location.path('/user/home');
                 console.log(data); // todo delete this
         }, function(data) {
-            messaging.errorMsg('Login unsuccessful!'); 
+            messaging.errorMsg('Login unsuccessful! Message: ' + data.error_description);
             console.log(data);
         });
     }

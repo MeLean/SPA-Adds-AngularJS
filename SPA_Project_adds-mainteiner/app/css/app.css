@@ -74,3 +74,7 @@ footer {
     height: 130px;
 }
 
+#status-filter {
+    line-height: 2em;
+}
+

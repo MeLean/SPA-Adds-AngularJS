@@ -22,8 +22,8 @@ adsApp.controller('PublishAdController', ['$scope', '$location', '$rootScope', '
             $scope.submitAd = function (ad) {
                 var databaseUrl = baseUrl + 'user/ads';
                 requestManager.uploadUserAd(ad, databaseUrl).then(function () {
-                    $location.path('/user/ads'); // todo make my ads
-                    messaging.successMsg('The was added successful!');
+                    $location.path('/user/ads');
+                    messaging.successMsg('The ad was added successful!');
                 }, function (error) {
                     messaging.errorMsg('There was a problem getting data upload! Message: ' + error.message);
                 });
