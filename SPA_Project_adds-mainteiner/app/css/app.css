@@ -31,18 +31,22 @@ footer {
 .buttons-holder {
     margin-top: 5%;
 }
+
 .navbar-fixed-top {
     padding: 0 0.5%;
 }
+
 #filter-category, #filter-town, #page-change {
    margin-top: 13px;
    border: 0;
    color: black;
    background: transparent;
 }
+
 #filter-category>.label, #filter-town>.label, #page-change>.label{
     font-size: 1em;
 }
+
 .nav-filter, .nav-page {
     padding: 0.2em;
     line-height: 1.2em;
