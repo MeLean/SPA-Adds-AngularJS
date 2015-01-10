@@ -9,6 +9,7 @@ adsApp.controller('EditAdController', ['$scope', '$location', '$routeParams', '$
                 var reader = new FileReader();
                 reader.onload = function () {
                     $scope.ad.imageDataUrl = reader.result;
+                    $scope.ad.changeImage = true;
                     $(".image-box").html("<img src='" + reader.result + "'>");
                 };
                 reader.readAsDataURL(file);
@@ -40,6 +41,6 @@ adsApp.controller('EditAdController', ['$scope', '$location', '$routeParams', '$
         $scope.deleteImgUrl = function () {
             $scope.ad.changeImage = true;
             $scope.ad.imageDataUrl = null;
-            $route.reload();
+            $(".image-box").html("<img src=''>");
         }
 }]);

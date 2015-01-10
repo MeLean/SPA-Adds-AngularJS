@@ -22,8 +22,8 @@
             <div class="row">
                 <ul class="nav navbar-nav">
                     <li><a href="#/">Home</a></li>
-                    <li><a href="#/login-form" data-ng-hide="checkForLogin()">Login</a></li><!-- TODO hide ON LOGIN-->
-                    <li><a href="#/register-form" data-ng-hide="checkForLogin()">Register</a></li><!-- TODO hide ON LOGIN-->
+                    <li><a href="#/login-form" data-ng-hide="checkForLogin()">Login</a></li>
+                    <li><a href="#/register-form" data-ng-hide="checkForLogin()">Register</a></li>
                     <li data-ng-cloak class="hidden-sm"><a href="" target="self">Wellcome, {{username()}}</a></li>
                     <li><a href="#/" data-ng-show="checkForLogin()" ng-controller="LogoutController" data-ng-click="logout()">Logout</a></li>
                     <li>
