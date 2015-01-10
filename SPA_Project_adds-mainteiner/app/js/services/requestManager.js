@@ -1,8 +1,8 @@
 ﻿'use strict';
-adsApp.factory('requestManager', ['$http', '$q', function ($http, $q) {
-    var requester = function (obj, url, method, headers) {
+adsApp.factory('requestManager', ['$http', '$q', 'authentification', function ($http, $q, authentification) {
+    var requester = function (obj, url, method) {
         var defer = $q.defer();
-        var requestingHeaders = headers || {};
+        var requestingHeaders = authentification.getHeaders() || {};
         $http({
             headers: requestingHeaders,
             url: url,
@@ -18,16 +18,16 @@ adsApp.factory('requestManager', ['$http', '$q', function ($http, $q) {
         return defer.promise;
     }
 
-    var getDataFromUrl = function (databaseUrl, headers) {
-        return requester(null, databaseUrl, 'GET', headers);
+    var getDataFromUrl = function (databaseUrl) {
+        return requester(null, databaseUrl, 'GET');
     }
 
     var loginToSystem = function (obj, databaseUrl) {
-        return requester(obj, databaseUrl, 'POST', null);
+        return requester(obj, databaseUrl, 'POST');
     }
 
-    var uploadUserAd = function(obj, databaseUrl, headers) {
-        return requester(obj, databaseUrl, 'POST', headers);
+    var uploadUserAd = function(obj, databaseUrl) {
+        return requester(obj, databaseUrl, 'POST');
     }
 
     return {
