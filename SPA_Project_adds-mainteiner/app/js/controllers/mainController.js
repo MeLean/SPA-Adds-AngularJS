@@ -7,15 +7,15 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
             displayAds(data);
         });
 
-    requestManager.getDataFromUrl(baseUrl + 'towns').then(function (data) {
+        requestManager.getDataFromUrl(baseUrl + 'towns').then(function (data) {
         $scope.towns = data;
     });
 
-    requestManager.getDataFromUrl(baseUrl + 'categories').then(function (data) {
+        requestManager.getDataFromUrl(baseUrl + 'categories').then(function (data) {
         $scope.categories = data;
     });
 
-    $scope.updateAds = function (categoryFilter, townFilter, startPage, adsPerPage) {
+        $scope.updateAds = function (categoryFilter, townFilter, startPage, adsPerPage) {
         var categoryUrlRequest = makeUrlForRequest(categoryFilter, 'CategoryId=');
         var townRequest = makeUrlForRequest(townFilter, '&TownId=');
         var pageRequest = startPage || 1;
@@ -33,7 +33,19 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
                        });
         }  
 
-    function makeUrlForRequest(filter, str) {
+        $scope.checkForLogin = function () {
+            return authentification.isLogged();
+        }
+
+        $scope.username = function() {
+            if (authentification.isLogged()) {
+                return authentification.getUser().username;
+            } else {
+                return 'Guest';
+            }
+        }
+
+        function makeUrlForRequest(filter, str) {
         if (filter) {
             return str + filter;
         } else {
@@ -41,7 +53,7 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
         }
     }
 
-    function displayAds(data)  {
+        function displayAds(data)  {
         var ads = data.ads;
         if (ads.length > 0) {
             var pages = data.numPages;
@@ -58,5 +70,7 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
             $scope.ads = ads; 
             messaging.errorMsg('There are no such ads!');
         }
-    } 
-}]);
+    }
+
+      
+    }]);

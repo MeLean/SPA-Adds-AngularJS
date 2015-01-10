@@ -33,11 +33,16 @@ adsApp.factory('requestManager', ['$http', '$q', 'authentification', function ($
     var putSomeData = function (obj, databaseUrl) {
         return requester(obj, databaseUrl, 'PUT');
     }
+    
+    var deleteData = function (databaseUrl) {
+        return requester(null, databaseUrl, 'DELETE');
+    }
 
     return {
         getDataFromUrl: getDataFromUrl,
         loginToSystem: loginToSystem,
         uploadUserAd: uploadUserAd,
-        putSomeData: putSomeData
+        putSomeData: putSomeData,
+        deleteData: deleteData
     }
 }]);

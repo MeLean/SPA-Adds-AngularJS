@@ -15,7 +15,6 @@
             </div>
         </div>
     </form>
-    <div>
         <div data-ng-repeat="ad in ads | filter: fiterByText | filter: statusFilter">
             <div class="ads-holder">
                 <div class="row">
@@ -36,7 +35,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <a href="" data-ng-if="ad.status=='WaitingApproval' || ad.status=='Published'" class="btn btn-primary"  data-ng-click="deactivateAd(ad)">Deactivate</a>
-                        <a href="" data-ng-if="ad.status=='Inactive'" class="btn btn-primary" data-ng-click="deactivateAd(ad)">Publish Again</a>
+                        <a href="" data-ng-if="ad.status=='Inactive'" class="btn btn-primary" data-ng-click="publishAgainAd(ad)">Publish Again</a>
                         <a href="#/user/ads/edit/{{ad.id}}" data-ng-if="ad.status=='Inactive'" class="btn btn-primary">Edit</a>
                         <a href="#/user/ads/delete/{{ad.id}}" data-ng-if="ad.status=='Inactive'" class="btn btn-primary">Delete</a>
                     </div>

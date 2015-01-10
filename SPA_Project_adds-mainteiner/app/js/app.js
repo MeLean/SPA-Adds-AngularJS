@@ -18,6 +18,10 @@ var adsApp = angular.module('adsApp', ['ngRoute'])
                 templateUrl: 'app/templates/edit-profile.html'
             }).when('/please-login', {
                 templateUrl: 'app/templates/please-login.html'
+            }).when('/user/ads/edit/:id', {
+                templateUrl: 'app/templates/edit-ad.html'
+            }).when('/user/ads/delete/:id', {
+                templateUrl: 'app/templates/delete-ad.html'
             })
             .otherwise({ redirectTo: 'app/templates/home.html' });
     }])
