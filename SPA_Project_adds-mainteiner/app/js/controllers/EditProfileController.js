@@ -10,7 +10,6 @@ adsApp.controller('EditProfileController', ['$scope', '$location', 'requestManag
             }, function(error) {
                 messaging.errorMsg('Could not get user`s data from server! Message: ' + error.message);
             });
-
             $scope.updateUser = function(user) {
                 var databaseUrl = baseUrl + 'user/profile';
                 requestManager.putSomeData(user, databaseUrl).then(function (data) {
