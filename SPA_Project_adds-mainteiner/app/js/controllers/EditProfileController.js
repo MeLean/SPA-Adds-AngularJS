@@ -21,8 +21,7 @@ adsApp.controller('EditProfileController', ['$scope', '$location', 'requestManag
             }
 
             $scope.changePassword = function (password) {
-                var url = baseUrl + 'user/ChangePassword';
-                alert(JSON.stringify(password));
+                var url = baseUrl + 'user/ChangePassword'; 
                 if (password.newPassword === password.confirmPassword) {
                     requestManager.putSomeData(password, url).then(function (data) {
                         messaging.successMsg('Password changed successful updated!');
