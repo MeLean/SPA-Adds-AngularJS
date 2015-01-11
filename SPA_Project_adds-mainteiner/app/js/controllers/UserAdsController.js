@@ -18,7 +18,7 @@ adsApp.controller('UserAdsController', ['$scope', '$location', '$rootScope', '$r
                 requestManager.putSomeData(null, databaseUrl).then(function(data) {
                     messaging.successMsg('The ad was deactivated successful!');
                     $location.path('/user/ads');
-                    $route.reload();;
+                    $route.reload();
                 }, function(error) {
                     messaging.errorMsg('There was a problem whit deactivatin! Message: ' + error.message);
                 });
