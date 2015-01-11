@@ -1,12 +1,10 @@
 ﻿'use strict';
 
-adsApp.controller('UserAdsController', ['$scope', '$location', '$rootScope', '$routeParams', '$route', 'requestManager', 'baseUrl', 'messaging', 'authentification',
-    function ($scope, $location, $rootScope, $routeParams, $route, requestManager, baseUrl, messaging, authentification) {
+adsApp.controller('UserAdsController', ['$scope', '$location', '$routeParams', '$route', 'requestManager', 'baseUrl', 'messaging', 'authentification',
+    function ($scope, $location, $routeParams, $route, requestManager, baseUrl, messaging, authentification) {
         var isLogged = authentification.isLogged(); 
-        if (isLogged) { 
-            var pageRequest = $rootScope.startPage || 1;
-            var pageSizeRequest = $rootScope.adsPerPage || 10; 
-            var databaseUrl = baseUrl + 'user/ads?' + 'StartPage=' + pageRequest + '&PageSize=' + pageSizeRequest;
+        if (isLogged) {
+            var databaseUrl = baseUrl + 'user/ads';
             requestManager.getDataFromUrl(databaseUrl).then(function (data) {
                 $scope.ads = data.ads;
             }, function (error) {
