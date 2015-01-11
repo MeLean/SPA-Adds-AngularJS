@@ -1,8 +1,7 @@
 ﻿'use strict';
 adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'messaging', 'authentification',
     function ($scope, requestManager, baseUrl, messaging, authentification) {
-
-        // todo do some messaging
+      
         requestManager.getDataFromUrl(baseUrl + 'ads').then(function (data) {
             displayAds(data);
         });
@@ -71,6 +70,4 @@ adsApp.controller('MainController', ['$scope', 'requestManager', 'baseUrl', 'mes
             messaging.errorMsg('There are no such ads!');
         }
     }
-
-      
-    }]);
+}]);
