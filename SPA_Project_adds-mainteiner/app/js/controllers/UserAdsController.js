@@ -1,12 +1,12 @@
 ﻿'use strict';
 
-adsApp.controller('UserAdsController', ['$scope', '$location', '$routeParams', '$route', 'requestManager', 'baseUrl', 'messaging', 'authentification',
-    function ($scope, $location, $routeParams, $route, requestManager, baseUrl, messaging, authentification) {
+adsApp.controller('UserAdsController', ['$scope', '$location', '$route', 'requestManager', 'baseUrl', 'messaging', 'authentification',
+    function ($scope, $location,  $route, requestManager, baseUrl, messaging, authentification) {
         var isLogged = authentification.isLogged(); 
         if (isLogged) {
             var databaseUrl = baseUrl + 'user/ads';
             requestManager.getDataFromUrl(databaseUrl).then(function (data) {
-                $scope.ads = data.ads;
+                $scope.UserAds = data.ads;
             }, function (error) {
                 messaging.errorMsg('There was a problem whit getting data! Message: ' + error.message);
             });
@@ -35,6 +35,4 @@ adsApp.controller('UserAdsController', ['$scope', '$location', '$routeParams', '
         } else {
             $location.path('/please-login');
         }
-
-
     }]);
